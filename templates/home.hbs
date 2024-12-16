@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="home.css">
+
+    <title>Home</title>
+</head>
+<body>
+    <h1>MASTERLIST Homepage</h1>
+    <form id = "searchform" action="/search-results" method="GET">
+        <label for="searchTerm">Search:</label>
+        <input type="text" id="searchTerm" name="searchTerm" required>
+        <select name ="mediaType" id ="mediaType">
+            <option value = "Movie">Movie</option>
+            <option value ="Game">Game</option>
+            <option value="Song">Song</option>
+            <option value="Book">Book</option>
+            <option value="Show">Show</option>
+        </select>
+        <button type="submit">Search</button>
+		
+    </form>
+    <aside>
+    <a href="/admin">Admin Page</a>
+    <a href="/profile">Profile Page</a>
+	<a href="/faq">FAQ Page</a>
+    </aside>
+  {{#if media}}
+    <section>
+        <h2>Featured Media</h2>
+        <h3>{{media.title}}</h3>
+        <h3>{{media.Title}}</h3>
+        <h3>{{media.Name}}</h3>
+        <h3>{{media.song_name}}</h3>
+        <p>{{media.mediaType}}</p>
+        <p>{{media.description}}</p>
+        <p>{{media.Description}}</p>
+        <a href="/{{media.mediaType}}/{{media._id}}">More Details</a>
+    </section>
+    {{else}}
+    <p>No media to display at the moment.</p>
+    {{/if}}	
+</body>
+</html>

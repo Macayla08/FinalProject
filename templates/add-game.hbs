@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/user.css">
+    <title>Add New Game</title>
+</head>
+<body>
+
+<h1>Add New Game</h1>
+
+<form action="/admin/add-game" method="POST">
+    <!-- Game Name -->
+    <label for="Name">Game Name:</label>
+    <input type="text" id="Name" name="Name" required><br><br>
+
+    <!-- Platform -->
+    <label for="Platform">Platform:</label>
+    <input type="text" id="Platform" name="Platform" required><br><br>
+
+    <!-- Genre -->
+    <label for="Genre">Genre:</label>
+    <input type="text" id="Genre" name="Genre" required><br><br>
+
+    <!-- Developer -->
+    <label for="Developer">Developer:</label>
+    <input type="text" id="Developer" name="Developer" required><br><br>
+
+    <!-- Rating -->
+    <label for="Rating">Rating:</label>
+    <input type="number" id="Rating" name="Rating" min="1" max="10" required><br><br>
+
+    <!-- Poster URL -->
+    <label for="poster">Poster URL:</label>
+    <input type="text" id="poster" name="poster" required><br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Add Game</button>
+</form>
+
+<!-- Back to Games List -->
+<a href="/a

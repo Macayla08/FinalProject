@@ -1,0 +1,113 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Matches a clean, professional style */
+    background-color: #f4f4f9; /* Subtle off-white background for contrast */
+    color: #2c2c2c; /* Neutral dark text color */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #34495e;
+    color: white;
+    margin: 0;
+}
+
+/* Profile Info Card */
+.profile-info {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Clean white card background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 0.95rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Subtle field background */
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Buttons */
+button {
+    background-color: #5a88f2; /* Matches softer blues */
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+button.delete {
+    background-color: #e04b4b; /* Distinct red for destructive action */
+}
+
+button.delete:hover {
+    background-color: #c03c3c;
+}
+
+/* Form Layout */
+.column-left {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+
+
+

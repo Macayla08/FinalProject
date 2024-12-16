@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin.css">
+    <title>Admin - Songs</title>
+</head>
+<body>
+
+<h1>Manage Songs</h1>
+
+<!-- Back to Admin Home -->
+<a href="/admin">
+    <button>Back to Admin Home</button>
+</a>
+
+<!-- Add New Song Button -->
+<div class="container">
+<a href="/admin/add-song">
+    <button>Add New Song</button>
+</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Song Name</th>
+            <th>Artist</th>
+            <th>Genre</th>
+            <th>Track URL</th>
+            <th>Poster</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each songs}}
+            <tr>
+                <td>{{this.song_name}}</td>
+                <td>{{this.artist}}</td>
+                <td>{{this.genre}}</td>
+                <td><a href="{{this.track_href}}" target="_blank">Listen</a></td>
+                <td><img src="{{this.poster}}" alt="{{this.song_name}}" width="100"></td>
+                <td>
+                    <a href="/admin/edit-song/{{this._id}}">Edit</a>
+                    <form action="/admin/delete-song/{{this._id}}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+</body>
+</html>

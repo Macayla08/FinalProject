@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Search Media</title>
+</head>
+<body>
+    <h1>Search</h1>
+    <a href="/home">Home</a>
+    <form id="searchForm" action="/search-results" method="GET">
+        <label for="searchTerm">Search:</label>
+        <input type="text" id="searchTerm" name="searchTerm">
+        <select name="mediaType" id="mediaType">
+            <option value="Movie">Movie</option>
+            <option value="Game">Game</option>
+            <option value="Song">Song</option>
+            <option value="Book">Book</option>
+            <option value="Show">Show</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    <h3 id="resultheader"></h3>
+    <ul id="resultsList"></ul>
+
+    <script>
+    // Event listener for loading the search results when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                searchTerm: params.get('searchTerm'),
+                mediaType: params.get('mediaType')
+            };
+        }
+
+        const { searchTerm, mediaType } = getQueryParams();
+
+        if (searchTerm && mediaType) {
+            // Perform the search using the initial query from the URL
+            fetchResults(searchTerm, mediaType);
+        }
+    });
+
+     //Event listener for the form submission
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                searchTerm: params.get('searchTerm'),
+                mediaType: params.get('mediaType')
+            };
+        }
+
+        const { searchTerm, mediaType } = getQueryParams();
+
+        if (searchTerm && mediaType) {
+            // Perform the search using the initial query from the URL
+            fetchResults(searchTerm, mediaType);
+        }
+
+        //query = document.getElementById('searchTerm');
+        //const mediaType = document.getElementById('mediaType');
+
+        //Perform the search with the form input
+        //fetchResults(query, mediaType);
+    });
+
+    function fetchResults(query, mediaType) {
+        fetch(`/search-results?searchTerm=${query}&mediaType=${mediaType}`, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest' // To identify AJAX request
+            }
+        })
+        .then(response => response.json())
+        .then(results => {
+            const resulttitle = document.getElementById('resultheader');
+            const resultsList = document.getElementById('resultsList');
+            resultsList.innerHTML = ''; // Clear previous results
+
+            if (results.length > 0) {
+                resulttitle.textContent = 'Results for ' + query + ' in ' + mediaType + 's:';
+                results.forEach(result => {
+                    const listItem = document.createElement('li');
+                    let attributes = [];
+                    console.log(result.Name);
+                    if (result.title) {
+                        attributes.push(`<a href="/${mediaType.toLowerCase()}/${result._id}">Title: ${result.title}</a>`);
+                        console.log('found');
+                    } else if (result.Title) {
+                        attributes.push(`<a href="/${mediaType.toLowerCase()}/${result._id}">Title: ${result.Title}</a>`);
+                        console.log('found');
+
+                    } else if (result.Name) {
+                        attributes.push(`<a href="/${mediaType.toLowerCase()}/${result._id}">Name: ${result.Name}</a>`);
+                        console.log('found');
+
+                    } else if (result.song_name) {
+                        attributes.push(`<a href="/${mediaType.toLowerCase()}/${result._id}">Title: ${result.song_name}</a>`);
+                        console.log('found');
+
+                    } else {
+                        console.log('in');
+
+                    }
+
+                    if (result.runtime) attributes.push(`${result.runtime} minutes`);
+                    if (result.duration) attributes.push(`${result.duration}`);
+                    if (result.genre || result.Genre) attributes.push(`Genres: ${result.genre || result.Genre}`);
+                    if (result.director) attributes.push(`Directed by ${result.director}`);
+                    if (result.authors) attributes.push(`Written by ${result.authors}`);
+                    if (result.cast || result.Cast) attributes.push(`Cast includes ${result.Cast || result.cast}`);
+                    if (result.description || result.Description) attributes.push(`About: ${result.description || result.Description}`);
+
+                    listItem.innerHTML = attributes.join(', ');
+                    resultsList.appendChild(listItem);
+                });
+            } else {
+                resultsList.innerHTML = '<li>No results found.</li>';
+            }
+        })
+        .catch(error => console.error('Error fetching search results:', error));
+    }
+</script>
+
+</body>
+</html>

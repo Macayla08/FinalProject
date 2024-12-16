@@ -1,0 +1,106 @@
+/* home.css */
+body {
+    background-color: #ecf0f1;
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #34495e;
+    color: white;
+    margin: 0;
+}
+
+form {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
+}
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px; /* Ensure input fields are comfortable */
+    box-sizing: border-box; /* Prevents padding from affecting the element's width */
+}
+
+form button {
+    margin-top: 15px;
+}
+
+a {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #8e44ad;
+}
+
+a.admin, a.profile, a.faq {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: #34495e;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+a.admin:hover, a.profile:hover, a.faq:hover {
+    background-color: #1abc9c;
+}
+
+section {
+    text-align: center;
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+section img {
+    margin: 10px 0;
+}
+
+section p {
+    color: #7f8c8d;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+section a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+}
+
+section a:hover {
+    background-color: #1abc9c;
+}
+
+/* New Styles for Centering the Aside */
+aside {
+    margin: 20px auto; /* Centers the aside element horizontally */
+    width: 90%; /* Makes the aside element take up 90% of the container */
+    max-width: 800px; /* Sets a maximum width to avoid too wide a container */
+    text-align: center; /* Centers text and content inside the aside */
+}

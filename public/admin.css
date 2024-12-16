@@ -1,0 +1,111 @@
+/* admin.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #34495e;
+    color: white;
+    margin: 0;
+}
+
+/* Buttons */
+button {
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Back to Admin Home and Add New Book buttons */
+.container a {
+    margin-right: 10px;
+}
+
+.container a button {
+    width: auto;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Make table scrollable horizontally if necessary */
+    table-layout: fixed; /* Prevent table content from expanding too wide */
+}
+
+table thead tr {
+    background-color: #2980b9;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    word-wrap: break-word; /* Ensures text wraps properly */
+    overflow: hidden;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+table a {
+    color: #2980b9;
+    margin-right: 10px;
+}
+
+table a:hover {
+    color: #1abc9c;
+}
+
+/* Forms */
+form {
+    display: inline-block;
+}
+
+form button {
+    background-color: #e74c3c; /* Red for delete */
+    margin-left: 10px;
+}
+
+form button:hover {
+    background-color: #c0392b;
+}
+

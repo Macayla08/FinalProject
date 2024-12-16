@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="user.css">
+
+  <title>Edit User</title>
+</head>
+<body>
+  <h1>Edit User- {{user.username }}</h1>
+  
+  <form action="/admin/edit/{{user._id}}" method="POST">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" value="<%= user.username %>" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <a href="/admin">Back to Admin Panel</a>
+</body>
+</html>

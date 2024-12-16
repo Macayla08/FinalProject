@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/admin.css">
+  <title>Manage Books</title>
+</head>
+<body>
+  <h1>Manage Books</h1>
+  
+  <a href="/admin">
+    <button>Back to Admin Home</button>
+</a>
+
+<!-- Button to navigate to Add Book Page -->
+<div class="container">
+<a href="/admin/add-book">
+    <button>Add New Book</button>
+</a>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Authors</th>
+        <th>ISBN</th>
+        <th>Pages</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each books}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.authors}}</td>
+          <td>{{this.isbn13}}</td>
+          <td>{{this.num_pages}}</td>
+          <td>
+            <a href="/admin/edit-book/{{this._id}}">Edit</a>
+            <form action="/admin/delete-book/{{this._id}}" method="POST" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</body>
+</html>

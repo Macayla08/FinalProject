@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="shared.css">
+
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <a href="/home">Home</a>
+  <h2>Manage Users</h2>
+  
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this.username}}</td>
+            <td>{{this.role}}</td>
+            <td>
+                <form action="/admin/edit-role/{{this._id}}" method="POST">
+                    <select name="role">
+                        <option value="user" {{#if (eq this.role 'user')}}selected{{/if}}>User</option>
+                        <option value="admin" {{#if (eq this.role 'admin')}}selected{{/if}}>Admin</option>
+                    </select>
+                    <button type="submit">Update Role</button>
+                </form>
+
+                <div>
+                    <form action="/admin/mute/{{this._id}}" method="POST">
+                        <button type="submit">
+                            {{#if this.muted}}Unmute{{else}}Mute{{/if}}
+                        </button>
+                    </form>
+                    <form action="/admin/ban/{{this._id}}" method="POST">
+                        <button type="submit">
+                            {{#if this.banned}}Unban{{else}}Ban{{/if}}
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+<h1>Admin Dashboard</h1>
+
+<h2>User Management</h2>
+<!-- Link to the user management page -->
+<a href="/admin">View Users</a>
+
+<h2>Manage Books</h2>
+<!-- Link to the books management page -->
+<a href="/admin/books">View Books</a>
+
+<h2>Manage Games</h2>
+<!-- Link to the games management page -->
+<a href="/admin/games">View Games</a>
+
+<h2>Manage Movies</h2>
+<!-- Link to the movies management page -->
+<a href="/admin/movies">View Movies</a>
+
+<h2>Manage Shows</h2>
+<!-- Link to the shows management page -->
+<a href="/admin/shows">View Shows</a>
+
+<h2>Manage Songs</h2>
+<!-- Link to the songs management page -->
+<a href="/admin/songs">View Songs</a>
+

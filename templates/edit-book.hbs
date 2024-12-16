@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/user.css">
+
+  <title>Edit Book</title>
+</head>
+<body>
+  <h1>Edit Book: {{book.title}}</h1>
+  
+  <form action="/admin/edit-book/{{book._id}}" method="POST">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" value="{{book.title}}" required>
+    </div>
+    <div>
+      <label for="authors">Authors:</label>
+      <input type="text" id="authors" name="authors" value="{{book.authors}}" required>
+    </div>
+    <div>
+      <label for="isbn13">ISBN:</label>
+      <input type="text" id="isbn13" name="isbn13" value="{{book.isbn13}}" required>
+    </div>
+    <div>
+      <label for="num_pages">Number of Pages:</label>
+      <input type="number" id="num_pages" name="num_pages" value="{{book.num_pages}}" required>
+    </div>
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <a href="/admin/books">Back to Manage Books</a>
+</body>
+</html>

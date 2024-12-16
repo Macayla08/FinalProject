@@ -1,0 +1,75 @@
+/* shared.css */
+body {
+    background-color: #ecf0f1;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Align content vertically */
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title above the form */
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1abc9c;
+}
+
+/* Centering the links below the form */
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+a:hover {
+    color: #1abc9c;
+}
+
+a:visited {
+    color: #8e44ad;
+}

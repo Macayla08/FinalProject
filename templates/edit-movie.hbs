@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/user.css">
+
+    <title>Edit Movie</title>
+</head>
+<body>
+
+<h1>Edit Movie - {{movie.title}}</h1>
+
+<form action="/admin/edit-movie/{{movie._id}}" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{movie.title}}" required><br><br>
+
+    <label for="director">Director:</label>
+    <input type="text" id="director" name="director" value="{{movie.director}}" required><br><br>
+
+    <label for="genres">Genres (comma separated):</label>
+    <input type="text" id="genres" name="genres" value="{{movie.genres}}" required><br><br>
+
+    <label for="release_date">Release Date:</label>
+    <input type="date" id="release_date" name="release_date" value="{{movie.release_date}}" required><br><br>
+
+    <label for="runtime">Runtime (in minutes):</label>
+    <input type="number" id="runtime" name="runtime" value="{{movie.runtime}}" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" cols="50" required>{{movie.description}}</textarea><br><br>
+
+    <button type="submit">Update Movie</button>
+</form>
+
+<!-- Back to Movies List -->
+<a href="/admin/movies">
+    <button>Back to Movies List</button>
+</a>
+
+</body>
+</html>

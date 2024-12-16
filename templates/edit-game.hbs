@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/user.css">
+
+    <title>Edit Game</title>
+</head>
+<body>
+<h1>Edit Game- {{game.Name}}</h1>
+
+<form action="/admin/edit-game/{{game._id}}" method="POST">
+  <div>
+    <label for="Name">Name</label>
+    <input type="text" id="Name" name="Name" value="{{game.Name}}" required>
+  </div>
+
+  <div>
+    <label for="Platform">Platform</label>
+    <input type="text" id="Platform" name="Platform" value="{{game.Platform}}" required>
+  </div>
+
+  <div>
+    <label for="Genre">Genre</label>
+    <input type="text" id="Genre" name="Genre" value="{{game.Genre}}" required>
+  </div>
+
+  <button type="submit">Update Game</button>
+</form>
+
+<a href="/admin/games">Back to Games List</a>
+</body>
+</html>

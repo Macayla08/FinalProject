@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin.css">
+    <title>Admin Dashboard - Games</title>
+</head>
+<body>
+
+<h1>Admin Dashboard - Manage Games</h1>
+
+<!-- Back to Admin Home -->
+<a href="/admin">
+    <button>Back to Admin Home</button>
+</a>
+
+<!-- Add Game Button -->
+<div class="container">
+    <a href="/admin/add-game">
+        <button>Add New Game</button>
+    </a>
+</div>
+
+<!-- Game List -->
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Platform</th>
+            <th>Genre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each games}}
+            <tr>
+                <td>{{this.Name}}</td>
+                <td>{{this.Platform}}</td>
+                <td>{{this.Genre}}</td>
+                <td>
+                    <!-- Edit Button -->
+                    <a href="/admin/edit-game/{{this._id}}">
+                        <button>Edit</button>
+                    </a>
+
+                    <!-- Delete Button -->
+                    <form action="/admin/delete-game/{{this._id}}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this game?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {{else}}
+            <tr>
+                <td colspan="4">No games available.</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+</body>
+</html>

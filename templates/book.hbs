@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="/shared.css">
+
+    <link rel="stylesheet" href="/media.css">
+</head>
+<body>
+    <div id="head">
+        <a href="/home">Home</a>
+        <h1 id="title">{{title}}</h1>
+        <p id="creator">{{creator}}</p>
+    </div>
+    <div id="content">
+        <div id="details">  
+            <p id="runtime"><strong>Page Count: </strong>{{num_pages}}</p>
+        </div>
+        <div id="cover_details">
+            <p id="isbn"><strong>ISBN: </strong>{{isbn}}</p>
+            <p class="rating"><strong>Rating:</strong>{{avgRate}}</p>
+            <div id="rating_form"> 
+                <form id="user_rating_form"> 
+                    <label for="user_rating">Your rating(1-10): </label> 
+                    <input type="number" id="user_rating" name="user_rating" min="1" max="10" value="{{userRateValue}}"> 
+                    <input type="submit" value="Submit Rating"> 
+                </form> 
+            </div>
+        </div>
+    </div>
+
+    <script> 
+        document.getElementById("user_rating_form").addEventListener("submit", async function(event) { 
+            event.preventDefault(); 
+
+            console.log("form submitting!!")
+
+            const userRating = document.getElementById("user_rating").value; 
+
+            console.log(userRating);
+
+            const mediaId = window.location.pathname.split("/").pop(); 
+
+            const response = await fetch(`/rate_media/${mediaId}`, { 
+                method: "POST", 
+                headers: { "Content-Type": "application/json" }, 
+                body: JSON.stringify({ rating: userRating }) }); 
+
+                const result = await response.json(); 
+
+                alert(result.message); 
+        }); 
+
+    </script>
+</body>
+</html>
