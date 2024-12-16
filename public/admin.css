@@ -57,8 +57,8 @@ table {
     text-align: left;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Make table scrollable horizontally if necessary */
-    table-layout: fixed; /* Prevent table content from expanding too wide */
+    overflow-x: auto; 
+    table-layout: fixed; 
 }
 
 table thead tr {
@@ -71,7 +71,7 @@ table thead tr {
 table th, table td {
     padding: 15px;
     border: 1px solid #ddd;
-    word-wrap: break-word; /* Ensures text wraps properly */
+    word-wrap: break-word; 
     overflow: hidden;
 }
 
@@ -97,7 +97,7 @@ form {
 }
 
 form button {
-    background-color: #e74c3c; /* Red for delete */
+    background-color: #e74c3c; 
     margin-left: 10px;
 }
 
