@@ -19,7 +19,7 @@ form {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
+    box-sizing: border-box;
 }
 
 form label {
@@ -32,8 +32,8 @@ form label {
 
 form input, form select, form button {
     width: 100%;
-    padding: 10px; /* Ensure input fields are comfortable */
-    box-sizing: border-box; /* Prevents padding from affecting the element's width */
+    padding: 10px;
+    box-sizing: border-box; 
 }
 
 form button {
@@ -97,10 +97,9 @@ section a:hover {
     background-color: #1abc9c;
 }
 
-/* New Styles for Centering the Aside */
 aside {
-    margin: 20px auto; /* Centers the aside element horizontally */
-    width: 90%; /* Makes the aside element take up 90% of the container */
-    max-width: 800px; /* Sets a maximum width to avoid too wide a container */
-    text-align: center; /* Centers text and content inside the aside */
+    margin: 20px auto; 
+    width: 90%; 
+    max-width: 800px; 
+    text-align: center; 
 }
