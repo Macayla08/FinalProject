@@ -12,7 +12,7 @@ function isAdmin(req, res, next) {
   return res.status(403).send('Access denied');
 }
 
-// GET route to display users
+// route to display users
 router.get('/admin', isAdmin, async (req, res) => {
   try {
     const users = await collection.find();
@@ -22,7 +22,7 @@ router.get('/admin', isAdmin, async (req, res) => {
   }
 });
 
-// GET route to edit a user
+//  route to edit a user
 router.get('/admin/edit/:id', isAdmin, async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -32,7 +32,7 @@ router.get('/admin/edit/:id', isAdmin, async (req, res) => {
   }
 });
 
-// POST route to update a user
+//  route to update a user
 router.post('/admin/edit/:id', isAdmin, async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(req.params.id, {
@@ -46,7 +46,7 @@ router.post('/admin/edit/:id', isAdmin, async (req, res) => {
   }
 });
 
-// POST route to delete a user
+//  route to delete a user
 router.post('/admin/delete/:id', isAdmin, async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
