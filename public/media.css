@@ -1,6 +1,5 @@
 /* media.css */
 
-/* General Body Styling */
 body {
     font-family: "Roboto", sans-serif;
     background-color: #ecf0f1;
@@ -8,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Header Section */
 #head {
     background-color: #34495e;
     color: white;
@@ -39,14 +37,12 @@ body {
     margin-top: 10px;
 }
 
-/* Content Section */
 #content {
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-/* Details Section */
 #details {
     flex: 1;
     padding: 20px;
@@ -64,7 +60,6 @@ body {
     margin: 0;
 }
 
-/* Cover and Rating Section */
 #cover_details {
     flex: 1;
     padding: 20px;
