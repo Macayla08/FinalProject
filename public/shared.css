@@ -1,26 +1,23 @@
 /* shared.css */
 
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.6; 
 }
 
-/* Typography */
 h1, h2, h3 {
     color: #2c3e50;
-    margin-bottom: 15px; /* Increase spacing after headers */
+    margin-bottom: 15px; 
 }
 
 p {
-    margin-bottom: 10px; /* Add space between paragraphs */
+    margin-bottom: 10px;
 }
 
-/* Links */
 a {
     text-decoration: none;
     color: #2980b9;
@@ -30,14 +27,13 @@ a:hover {
     color: #1abc9c;
 }
 
-/* Buttons */
 button {
     background-color: #2980b9;
     color: white;
     border: none;
     padding: 12px 20px;
     cursor: pointer;
-    border-radius: 6px; /* Slightly larger corners for a modern look */
+    border-radius: 6px; 
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
@@ -47,21 +43,20 @@ button:hover {
 }
 
 button.delete {
-    background-color: #e74c3c; /* Red for delete */
+    background-color: #e74c3c; 
 }
 
 button.delete:hover {
     background-color: #c0392b;
 }
 
-/* Input Fields */
 input, select {
     padding: 12px;
-    margin: 10px 0; /* More space between inputs */
+    margin: 10px 0; 
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: calc(100% - 26px); /* Adjusted for padding */
-    font-size: 16px; /* Uniform text size */
+    width: calc(100% - 26px); 
+    font-size: 16px; 
 }
 
 input:focus, select:focus {
@@ -70,36 +65,32 @@ input:focus, select:focus {
     box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
 }
 
-/* Sections / Containers */
 section {
-    margin: 30px auto; /* Center the section with extra spacing */
+    margin: 30px auto; 
     padding: 25px;
     max-width: 800px;
     background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .profile-info, .form-container {
-    margin-bottom: 20px; /* Space between sections */
+    margin-bottom: 20px; 
 }
 
-/* Images */
 img {
     max-width: 100%;
     border-radius: 8px;
-    margin-top: 15px; /* Space between image and content */
+    margin-top: 15px; 
 }
 
-/* Forms */
 label {
     font-size: 14px;
     margin-bottom: 5px;
-    display: block; /* Align labels with inputs */
+    display: block; 
     color: #555;
 }
 
-/* Utility Classes */
 .text-center {
     text-align: center;
 }
