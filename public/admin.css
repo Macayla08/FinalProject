@@ -1,6 +1,6 @@
 /* admin.css */
 
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +18,6 @@ h1 {
     margin: 0;
 }
 
-/* Buttons */
 button {
     background-color: #2980b9;
     color: #fff;
@@ -41,7 +40,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Back to Admin Home and Add New Book buttons */
 .container a {
     margin-right: 10px;
 }
@@ -50,7 +48,6 @@ button:disabled {
     width: auto;
 }
 
-/* Tables */
 table {
     width: 100%;
     max-width: 100%;
@@ -95,7 +92,6 @@ table a:hover {
     color: #1abc9c;
 }
 
-/* Forms */
 form {
     display: inline-block;
 }
