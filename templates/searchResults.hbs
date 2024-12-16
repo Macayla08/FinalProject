@@ -27,7 +27,6 @@
     <ul id="resultsList"></ul>
 
     <script>
-    // Event listener for loading the search results when the page loads
     document.addEventListener('DOMContentLoaded', function () {
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
@@ -40,12 +39,11 @@
         const { searchTerm, mediaType } = getQueryParams();
 
         if (searchTerm && mediaType) {
-            // Perform the search using the initial query from the URL
             fetchResults(searchTerm, mediaType);
         }
     });
 
-     //Event listener for the form submission
+     //listener for the form submission
     document.getElementById('searchForm').addEventListener('submit', function (e) {
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
@@ -58,15 +56,10 @@
         const { searchTerm, mediaType } = getQueryParams();
 
         if (searchTerm && mediaType) {
-            // Perform the search using the initial query from the URL
             fetchResults(searchTerm, mediaType);
         }
 
-        //query = document.getElementById('searchTerm');
-        //const mediaType = document.getElementById('mediaType');
 
-        //Perform the search with the form input
-        //fetchResults(query, mediaType);
     });
 
     function fetchResults(query, mediaType) {
