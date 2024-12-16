@@ -11,31 +11,24 @@
 <h1>Add New Song</h1>
 
 <form action="/admin/add-song" method="POST">
-    <!-- Song Name -->
     <label for="song_name">Song Name:</label>
     <input type="text" id="song_name" name="song_name" required><br><br>
 
-    <!-- Artist -->
     <label for="artist">Artist:</label>
     <input type="text" id="artist" name="artist" required><br><br>
 
-    <!-- Genre -->
     <label for="genre">Genre:</label>
     <input type="text" id="genre" name="genre" required><br><br>
 
-    <!-- Track URL -->
     <label for="track_href">Track URL:</label>
     <input type="text" id="track_href" name="track_href" required><br><br>
 
-    <!-- Poster URL -->
     <label for="poster">Poster URL:</label>
     <input type="text" id="poster" name="poster" required><br><br>
 
-    <!-- Submit Button -->
     <button type="submit">Add Song</button>
 </form>
 
-<!-- Back to Songs List -->
 <a href="/admin/songs">
     <button>Back to Songs List</button>
 </a>
