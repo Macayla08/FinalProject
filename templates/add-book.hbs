@@ -12,31 +12,29 @@
 <h1>Add New Book</h1>
 
 <form action="/admin/add-book" method="POST">
-    <!-- Book Title -->
+    <!-- title -->
     <label for="title">Book Title:</label>
     <input type="text" id="title" name="title" required><br><br>
 
-    <!-- Authors -->
+    <!-- authors -->
     <label for="authors">Authors:</label>
     <input type="text" id="authors" name="authors" required><br><br>
 
-    <!-- ISBN -->
+    <!-- isbn -->
     <label for="isbn13">ISBN:</label>
     <input type="text" id="isbn13" name="isbn13" required><br><br>
 
-    <!-- Number of Pages -->
+    <!-- pages -->
     <label for="num_pages">Number of Pages:</label>
     <input type="number" id="num_pages" name="num_pages" required><br><br>
 
-    <!-- Cover Image URL -->
+    <!-- imageurl -->
     <label for="poster">Cover Image URL:</label>
     <input type="text" id="poster" name="poster" required><br><br>
 
-    <!-- Submit Button -->
     <button type="submit">Add Book</button>
 </form>
 
-<!-- Back to Books List -->
 <a href="/admin/books">
     <button>Back to Books List</button>
 </a>
